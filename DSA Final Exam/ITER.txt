@@ -1,0 +1,14 @@
+def __iter__(self):
+        self._cur = self._head
+        while self._cur != None:
+            yield self._cur._value
+            self._cur = self._cur._next
+
+    def __next__(self):
+        curVal = None
+        if self._cur == None:
+            raise StopIteration
+        else:
+            curVal = self._cur._value
+            self._cur = self._cur._next
+        return curVal
